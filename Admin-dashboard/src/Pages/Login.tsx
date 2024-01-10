@@ -7,32 +7,28 @@ import { BiLogoSpringBoot } from "react-icons/bi";
 const Login = () => {
   return (
     <>
-      <div className="flex justify-center items-center h-screen bg-slate-950">
+      <div className="flex h-screen  bg-slate-950">
         {/* navbar */}
-        <nav className="flex justify-between items-center w-full fixed top-0 left-0 px-6 py-4 z-50 bg-transparent">
-          <div className="flex items-center">
+        <nav className="flex justify-between w-full fixed top-0 left-0 px-6 py-4 z-50 bg-transparent">
             <p className="text-white text-4xl"><BiLogoSpringBoot /></p>
-          </div>
-          <div className="flex items-center">
             <span className="text-white text-3xl pr-9">
               <IoSunnyOutline />
             </span>
-          </div>
         </nav>
         {/* form and login page */}
-        <div className="flex flex-col md:flex-row w-full h-full">
+        <div className="flex flex-col md:flex-row w-full">
           {/* image */}
           <div className="w-full md:w-[50%] h-[100%] bg-transparent flex justify-center items-center">
             <img
               src="https://res.cloudinary.com/dsyln8j3g/image/upload/v1704868309/Screenshot_641_ayruvp.png"
               alt=""
-              className="w-[60%] md:w-[80%] h-auto mt-8"
+              className="w-[60%] md:w-[80%]   mt-8"
             />
           </div>
           {/* login form */}
-          <div className="w-full md:w-[50%] h-[100%] bg-transparent p-8 flex flex-col justify-between items-center mt-20">
-            <div className="w-full max-w-sm mt-6">
-              <p className="text-center text-sm md:text-lg text-white">
+          <div className="w-full md:w-[50%] h-[100%] bg-transparent gap-14 flex flex-col justify-between items-center ">
+            <div className="w-full max-w-sm mt-24   rounded-lg shadow-2xl">
+              <p className="text-center text-sm md:text-lg gap-16 text-white">
                 "Welcome to the future of restaurant reporting! We're serving up
                 an approach to streamline your restaurant management, marketing
                 data delicious easy to digest."
