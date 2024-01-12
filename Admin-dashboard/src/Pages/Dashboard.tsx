@@ -29,35 +29,35 @@ const Dashboard = () => {
                 </button>
 
                 <button
-                  className="text-white hover:bg-white hover:text-black hover:rounded-lg"
+                  className="text-white    "
                   style={{ padding: "5px 10px" }}
                 >
                   Sales
                 </button>
 
                 <button
-                  className="text-white hover:bg-white hover:text-black hover:rounded-lg"
+                  className="text-white  "
                   style={{ padding: "5px 10px" }}
                 >
                   Payment
                 </button>
 
                 <button
-                  className="text-white hover:bg-white hover:text-black hover:rounded-lg"
+                  className="text-white  "
                   style={{ padding: "5px 10px" }}
                 >
                   Tax
                 </button>
 
                 <button
-                  className="text-white hover:bg-white hover:text-black hover:rounded-lg"
+                  className="text-white  "
                   style={{ padding: "5px 10px" }}
                 >
                   MIS
                 </button>
 
                 <button
-                  className="text-white hover:bg-white hover:text-black hover:rounded-lg"
+                  className="text-white  "
                   style={{ padding: "5px 10px" }}
                 >
                   Purchase Entry

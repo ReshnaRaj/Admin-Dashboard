@@ -1,10 +1,39 @@
-// import React from "react";
+import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoMdEye } from "react-icons/io";
 import { BiLogoSpringBoot } from "react-icons/bi";
+import { adminData } from "../Sources/data";
+import { AdminDataType } from "../datatypes/Dtypes";
  
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [admins, setAdmins] = useState<AdminDataType>({
+    email: "",
+    password: "",
+  })
+
+  function formHandler(e: React.FormEvent) {
+    e.preventDefault();
+
+    if (adminData?.email !== admins.email) {
+      alert("Email is Incorrect");
+      return;
+    }
+  
+    if (adminData?.password !== admins?.password) {
+      alert("Password is Incorrect");
+      return;
+    }
+
+    alert("Login Success");
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1000);
+  }
+
+   
   return (
     <>
       <div className="flex h-screen  bg-slate-950">
@@ -33,10 +62,15 @@ const Login = () => {
                 an approach to streamline your restaurant management, marketing
                 data delicious easy to digest."
               </p>
-              <form className="mt-8 bg-slate-300 bg-opacity-15  shadow-2xl rounded-md px-8 pt-6 pb-8">
+              <form   onSubmit={(e) => formHandler(e)} className="mt-8 bg-slate-300 bg-opacity-15  shadow-2xl rounded-md px-8 pt-6 pb-8">
                 <div className="mb-4">
                   <input
                     type="text"
+                    value={admins.email}
+                    onChange={(e) =>
+                      setAdmins({ ...admins, email: e.target.value })
+                    }
+                    
                     className="bg-slate-300 bg-opacity-20  rounded-xl w-full h-12 ps-4 text-sm focus:outline-none text-slate-400"
                     placeholder="Email"
                   />
@@ -45,6 +79,12 @@ const Login = () => {
                   <div className="relative">
                     <input
                       type="password"
+                      
+                      value={admins.password}
+                      onChange={(e) =>
+                        setAdmins({ ...admins, password: e.target.value })
+                      }
+                     
                       className="bg-slate-300 bg-opacity-20 rounded-xl w-full h-12 pl-4 pr-12 text-sm focus:outline-none text-slate-400"
                       placeholder="Password"
                     />
