@@ -3,10 +3,12 @@ import { IoSunnyOutline } from "react-icons/io5";
 import { PiMicrosoftExcelLogo } from "react-icons/pi";
 import { GrLinkPrevious } from "react-icons/gr";
 import Container1 from "../components/Container1";
-import { salesDetails  } from "../Sources/data";
-import { SalesType } from "../datatypes/Dtypes";
- 
+import { salesDetails } from "../Sources/data";
+// import { SalesType } from "../datatypes/Dtypes";
+import { total } from "../Sources/data";
+
 import Barchart from "../components/Barchart";
+import Container2 from "../components/Container2";
 
 const Dashboard = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +44,6 @@ const Dashboard = () => {
                 <button className="text-white  ">MIS</button>
 
                 <button className="text-white  ">Purchase Entry</button>
-                 
 
                 <li className="flex items-center text-xs  text-white">
                   Export to Excel{" "}
@@ -50,12 +51,10 @@ const Dashboard = () => {
                     <PiMicrosoftExcelLogo />
                   </span>
                   <span className="mr-6"></span>
-                  
-                  
                 </li>
                 <span className="text-white text-xs  mt-2">
-                    Last updated time 09-Aug-2023 08:09 AM
-                  </span>
+                  Last updated time 09-Aug-2023 08:09 AM
+                </span>
               </ul>
 
               <span className="text-white text-xl pr-0">
@@ -104,15 +103,41 @@ const Dashboard = () => {
         <div className="flex flex-col  lg:flex-row bg-slate-900">
           <div className="grid flex-grow h-96 w-[10%] card bg-slate-900 rounded-box justify-between place-items-center">
             <div className="flex space-x-4   ">
-            {salesDetails.map((data, index) => (
-              <Container1 key={index} data={data} />
-            ))}
+              {salesDetails.map((data, index) => (
+                <Container1 key={index} data={data} />
+              ))}
             </div>
             {/* 3cards */}
             <div className="flex flex-row space-x-5  ">
-              < Barchart/>
-              
-             
+              <Barchart />
+              <div className="bg-gray-950  text-white p-4  rounded-lg shadow-md  ">
+                <h3 className="text-xs font-semibold mb-2">Total Purchase </h3>
+
+                <p className="text-lg font-normal text-center  mt-12 text-violet-600">
+                  <span className="text-white text-sm">cash/23<br></br></span>
+                  {total.purchase?.credit} 
+                  <span className="text-xs text-white pl-1">AED</span>
+                </p>
+                <p className="text-lg font-normal text-center mt-10  text-violet-600">
+                <span className="text-white text-sm">credit/11<br></br></span>
+                  {total.purchase?.cash} 
+                  <span className="text-xs text-white pl-1">AED</span>
+                </p>
+              </div>
+              <div className="bg-gray-950  text-white p-4  rounded-lg shadow-md  ">
+                <h3 className="text-xs font-semibold mb-2">Total Payment </h3>
+                <p className="text-lg font-normal text-center mb-4  mt-12 text-red-600">
+                <span className="text-white text-sm">cash/12<br></br></span>
+                
+                  {total.payment?.cash}
+                  <span className="text-xs text-white pl-1">AED</span>
+                </p>
+                <p className="text-lg font-normal text-center  mt-10 text-yellow-600">
+                <span className="text-white text-sm">cheque/2<br></br></span>
+                  {total.payment?.cheque}
+                  <span className="text-xs text-white pl-1">AED</span>
+                </p>
+              </div>
             </div>
           </div>
           <div className="divider lg:divider-horizontal"></div>
