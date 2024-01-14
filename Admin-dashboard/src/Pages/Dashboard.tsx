@@ -5,7 +5,8 @@ import { GrLinkPrevious } from "react-icons/gr";
 import Container1 from "../components/Container1";
 import { salesDetails  } from "../Sources/data";
 import { SalesType } from "../datatypes/Dtypes";
-import Container2 from "../components/Container2";
+ 
+import Barchart from "../components/Barchart";
 
 const Dashboard = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -109,9 +110,9 @@ const Dashboard = () => {
             </div>
             {/* 3cards */}
             <div className="flex flex-row space-x-5  ">
-              <Container2/>
-              <Container2/>
-              <Container2/>
+              < Barchart/>
+              
+             
             </div>
           </div>
           <div className="divider lg:divider-horizontal"></div>

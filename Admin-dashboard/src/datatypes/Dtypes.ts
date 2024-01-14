@@ -17,25 +17,25 @@ export interface SalesType {
     color: string;
   };
 }
-// export interface values {
-//   item: SalesType;
-//   Icon: React.FC | null;
-// }
+export interface values {
+  item: SalesType;
+  Icon: React.FC | null;
+}
 
-// export interface Total{
-//   purchase:{
-//     cash:string;
-//     credit:string;
-//   },
-//   payment:{
-//     cash:string;
-//     cheque:string;
-//   }
-// }
+export interface Total{
+  purchase:{
+    cash:string;
+    credit:string;
+  },
+  payment:{
+    cash:string;
+    cheque:string;
+  }
+}
 
-// export interface Item{
-//   item:string;
-//   color:string;
-//   price:string
-//   percentage?:number;
-// }
+export interface Item{
+  item:string;
+  color:string;
+  price:string
+  percentage?:number;
+}

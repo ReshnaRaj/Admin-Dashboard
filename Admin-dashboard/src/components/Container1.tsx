@@ -6,7 +6,7 @@ interface Container1Props {
 }
 
 const Container1: React.FC<Container1Props> = ({ data }) => {
-    console.log(data.value,"data of the box")
+    // console.log(data.value,"data of the box")
   return (
     <div className="bg-gray-950  text-white p-4  rounded-lg shadow-md">
       <h3 className="text-xs font-semibold mb-2">{data.title}</h3>
