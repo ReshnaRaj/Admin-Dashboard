@@ -5,18 +5,18 @@ export interface AdminDataType {
   password: string;
 }
 
-// export interface SalesType {
-//   title: string;
-//   Icon?: React.FC  | null;
-//   value: string;
-//   color: string;
-//   currency?: string;
-//   footer?: {
-//     Icon?: React.FC;
-//     value: string;
-//     color: string;
-//   };
-// }
+export interface SalesType {
+  title: string;
+  Icon?: React.FC  | null;
+  value: string;
+  color: string;
+  currency?: string;
+  footer?: {
+    Icon?: React.FC;
+    value: string;
+    color: string;
+  };
+}
 // export interface values {
 //   item: SalesType;
 //   Icon: React.FC | null;
