@@ -104,7 +104,7 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className="flex flex-col  lg:flex-row bg-slate-900">
+        <div className="flex flex-col  lg:flex-row bg-slate-900 ml-5">
           <div className="grid flex-grow h-96 w-[10%] card bg-slate-900 rounded-box justify-between place-items-center">
             <div className="flex space-x-4   ">
               {salesDetails.map((data, index) => (
@@ -112,7 +112,7 @@ const Dashboard = () => {
               ))}
             </div>
             {/* 3cards */}
-            <div className="flex flex-row space-x-5  ">
+            <div className="flex flex-row space-x-5  mt-3">
               <Barchart />
               <div className="bg-gray-950  text-white p-4  rounded-lg shadow-md  ">
                 <h3 className="text-xs font-semibold mb-2">Total Purchase </h3>
@@ -144,7 +144,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          {/* <div className="divider lg:divider-horizontal"></div> */}
+          <div className="divider lg:divider-horizontal"></div>
           {/* line chart starts */}
           <div className="grid flex-grow h-96  w-[10%]  card bg-gray-950 rounded-box place-items-center   mr-10">
             <p className="text-white text-center">Day Wise comparison
