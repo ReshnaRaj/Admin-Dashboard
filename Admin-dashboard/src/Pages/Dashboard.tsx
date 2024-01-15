@@ -3,12 +3,16 @@ import { IoSunnyOutline } from "react-icons/io5";
 import { PiMicrosoftExcelLogo } from "react-icons/pi";
 import { GrLinkPrevious } from "react-icons/gr";
 import Container1 from "../components/Container1";
-import { salesDetails } from "../Sources/data";
+import { salesDetails,total,latestSell,topSailedProduct } from "../Sources/data";
+
 // import { SalesType } from "../datatypes/Dtypes";
-import { total } from "../Sources/data";
+ 
 
 import Barchart from "../components/Barchart";
-import Container2 from "../components/Container2";
+ 
+import Linechart from "../components/Linechart";
+import Doughnut from "../components/Doughnut";
+import DataList from "../components/DataList";
 
 const Dashboard = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -140,23 +144,66 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="divider lg:divider-horizontal"></div>
-          <div className="grid flex-grow h-96 card bg-base-300 rounded-box place-items-center">
-            content
+          {/* <div className="divider lg:divider-horizontal"></div> */}
+          {/* line chart starts */}
+          <div className="grid flex-grow h-96  w-[10%]  card bg-gray-950 rounded-box place-items-center   mr-10">
+            <p className="text-white text-center">Day Wise comparison
+            <span className="pl-14"><button className=" rounded-lg  text-black  mt-5 hover:rounded-lg btn-active"
+                  style={{ padding: "3px 5px", backgroundColor: "white" }}>Day</button>
+                  <button className="pl-6">Month</button></span>
+            </p>
+          <p className=" text-xs  text-white">price</p>
+          <Linechart/>
           </div>
         </div>
         <div className="flex flex-col w-full lg:flex-row mt-5 bg-slate-900">
-          <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-            content
+        <div className="w-full h-[51rem] md:h-72 bg-transparent flex flex-wrap justify-center items-center py-5 px-10 md:px-0">
+      <div className="md:w-[90%] w-full h-[100%] bg-transparent flex items-center justify-between flex-nowrap flex-col md:flex-row gap-3">
+        {/* Left section 1 */}
+        <div className="h-[40%] md:h-[100%] w-[100%] md:w-[40%] md:ms-6 bg-gray-950 rounded-lg flex flex-col items-center md:flex-row md:p-0 md:gap-0">
+          <div className="md:h-full h-[30%] md:w-[70%] w-full flex flex-col gap-5 p-6 md:p-2 text-white">
+            <p className="text-sm font-semibold w-full ps-4">
+              Collection distribution
+            </p>
+            <div className="w-full h-fit ps-4">
+              <p className="text-[10px] md:text-sm">Total amount</p>
+              <p>
+                <b>365.61</b> AED
+              </p>
+            </div>
+            {/* ... Other content */}
           </div>
-          <div className="divider lg:divider-horizontal"></div>
-          <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-            content
+          <Doughnut />
+          {/* ... Other content */}
+        </div>
+        {/* Middle section */}
+        <div className="md:h-[100%] h-fit p-4 w-[100%] md:w-[30%] bg-gray-950 rounded-lg md:p-4">
+          <div className="w-full h-8 flex items-center ps-4 text-sm py-3">
+            <p className="text-white font-semibold">Top 5 selling product</p>
           </div>
-          <div className="divider lg:divider-horizontal"></div>
-          <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-            content
+          <div className="w-full h-[86%] bg-transparent flex justify-center items-center flex-col">
+          {topSailedProduct.map((item, i) => {
+              return <DataList key={i} items={item} />;
+            })}
+             
           </div>
+        </div>
+        {/* Right section */}
+        <div className="md:h-[100%] h-fit p-4 w-[100%] md:w-[30%] bg-gray-950 rounded-lg md:p-4">
+          <div className="w-full h-8 flex items-center ps-4 text-sm py-3">
+            <p className="text-white font-semibold">Least 5 selling product</p>
+          </div>
+          <div className="w-full h-[86%] bg-transparent flex justify-center items-center flex-col">
+          {latestSell.map((item, i) => (
+              <DataList key={i} items={item} />
+            ))}
+             
+          </div>
+        </div>
+      </div>
+    </div>
+          
+          
         </div>
       </div>
     </>
