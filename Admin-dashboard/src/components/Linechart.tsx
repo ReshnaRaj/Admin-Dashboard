@@ -19,7 +19,7 @@ const Linechart = () => {
         },
         fill: {
           type: "solid",
-          opacity: 0, // Set opacity to 0 for a completely transparent fill
+          opacity: 0, 
         },
         dataLabels: {
           enabled: false,
