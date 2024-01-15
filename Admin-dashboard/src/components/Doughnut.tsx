@@ -1,4 +1,4 @@
-import React from 'react'
+ 
 import ReactApexChart from 'react-apexcharts';
 import { chartData } from "../Sources/data";
 
