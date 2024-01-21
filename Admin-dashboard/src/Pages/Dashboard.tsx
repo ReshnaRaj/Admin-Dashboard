@@ -108,16 +108,22 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className="flex flex-col  lg:flex-row bg-slate-900 ml-5">
-          <div className="grid flex-grow h-96 w-[10%] card bg-slate-900 rounded-box justify-between place-items-center">
-            <div className="flex space-x-4   ">
+        <div className="w-full md:h-[28rem] flex flex-col  md:flex-row items-center justify-center bg-slate-900 ">
+          {/* <div className=" w-screen md:w-[55%] p-4 md:p-0 h-full md:h-[93%] bg-transparent"> */}
+          <div className="w-screen md:w-[55%] p-4 md:p-0   ">
+            <div className=" md:w-[100%] w-full h-[30%] flex justify-center items-center ">
+              <div className="md:w-[94%] w-full h-[100%] px-6 bg-transparent grid md:grid-cols-5 grid-cols-4 gap-2 p-3 md:p-0">
               {salesDetails.map((data, index) => (
                 <Container1 key={index} data={data} />
               ))}
+              </div>
             </div>
             {/* 3cards */}
-            <div className="flex flex-row space-x-5  mt-3">
+            <div className=" w-full md:h-[80%] h-[100%] flex flex-col md:flex-row justify-between items-center p-6 gap-4">
+              <div className="md:h-[95%] h-[95%] w-[100%] rounded-lg">
+
               <Barchart />
+              </div>
               <div className="bg-gray-950  text-white p-4  rounded-lg shadow-md  ">
                 <h3 className="text-xs font-semibold mb-2">Total Purchase </h3>
 
@@ -156,10 +162,22 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="divider lg:divider-horizontal"></div>
+          {/* <div className="divider lg:divider-horizontal"></div> */}
           {/* line chart starts */}
-          <div className="grid flex-grow h-96  w-[10%]  card bg-gray-950 rounded-box place-items-center   mr-10">
-            <p className="text-white text-center">
+          <div className="md:w-[35%] w-[85%] h-[30%] md:h-[95%] bg-gray-950 rounded-lg">
+            <div className="w-full h-20 md:h-14 flex flex-col md:flex-row">
+              <div className="md:w-[70%] w-full h-full flex justify-end items-center text-center">
+                <p className="text-white text-center text-xs">Day Wise comparison</p>
+
+              </div>
+              <div className="w-[50%] md:w-[30%] flex justify-center items-center gap-4">
+                <button className="text-black text-xs btn-active rounded-lg "  style={{ padding: "3px 5px", backgroundColor: "white" }}>Day</button>
+                <button className="text-white text-xs">Month</button>
+
+              </div>
+            </div>
+            
+            {/* <p className="text-white text-center">
               Day Wise comparison
               <span className="pl-14">
                 <button
@@ -170,8 +188,8 @@ const Dashboard = () => {
                 </button>
                 <button className="pl-6">Month</button>
               </span>
-            </p>
-            <p className=" text-xs  text-white">price</p>
+            </p> */}
+            <p className=" w-full h-auto ps-4 text-xs  text-white">price</p>
             <Linechart />
           </div>
         </div>
