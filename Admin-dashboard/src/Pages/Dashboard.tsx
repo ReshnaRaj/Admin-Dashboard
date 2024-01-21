@@ -119,32 +119,36 @@ const Dashboard = () => {
               </div>
             </div>
             {/* 3cards */}
-            <div className=" w-full md:h-[80%] h-[100%] flex flex-col md:flex-row justify-between items-center p-6 gap-4">
+            <div className=" w-full md:h-[80%] h-[100%] flex flex-col md:flex-row justify-between items-center p-6 gap-4  ">
               <div className="md:h-[95%] h-[95%] w-[100%] rounded-lg">
 
               <Barchart />
               </div>
-              <div className="bg-gray-950  text-white p-4  rounded-lg shadow-md  ">
-                <h3 className="text-xs font-semibold mb-2">Total Purchase </h3>
+              <div className="md:h-[95%] h-48 w-[100%] md:w-[30%] bg-gray-950 rounded-lg text-white flex flex-col justify-between items-center p-4">
+                <p className="text-xs font-semibold   ">Total Purchase </p>
 
-                <p className="text-lg font-normal text-center  mt-12 text-violet-600">
-                  <span className="text-white text-sm">
-                    cash/23<br></br>
-                  </span>
-                  {total.purchase?.credit}
-                  <span className="text-xs text-white pl-1">AED</span>
-                </p>
-                <p className="text-lg font-normal text-center mt-10  text-violet-600">
-                  <span className="text-white text-sm">
-                    credit/11<br></br>
-                  </span>
-                  {total.purchase?.cash}
-                  <span className="text-xs text-white pl-1">AED</span>
-                </p>
+                <div>
+                   <p className="text-xs mt-16">Cash /23</p>
+                   
+                </div>
+                <div className="flex items-center">
+                  <p className="text-violet-700 ">322.61</p>
+                  <p className="ps-1 text-xs">AED</p>
+
+                </div>
+                <div>
+                   <p className="mt-12 text-xs">Credit /23</p>
+                   
+                </div>
+                <div className="flex items-center ">
+                  <p className="text-violet-700">322.61</p>
+                  <p className="ps-1 text-xs">AED</p>
+
+                </div>
               </div>
-              <div className="bg-gray-950  text-white p-4  rounded-lg shadow-md  ">
+              <div className="md:h-[95%] h-48 w-[100%] md:w-[30%] bg-gray-950 rounded-lg text-white flex flex-col justify-between items-center p-4">
                 <h3 className="text-xs font-semibold mb-2">Total Payment </h3>
-                <p className="text-lg font-normal text-center mb-4  mt-12 text-red-600">
+                <p className="text-lg font-normal text-center    mt-12    text-red-600">
                   <span className="text-white text-sm">
                     cash/12<br></br>
                   </span>
@@ -152,7 +156,7 @@ const Dashboard = () => {
                   {total.payment?.cash}
                   <span className="text-xs text-white pl-1">AED</span>
                 </p>
-                <p className="text-lg font-normal text-center  mt-10 text-yellow-600">
+                <p className="text-lg font-normal text-center  mt-6   text-yellow-600">
                   <span className="text-white text-sm">
                     cheque/2<br></br>
                   </span>
